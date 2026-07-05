@@ -57,16 +57,20 @@ class Backend:
         self.be = None
         self._name = None
 
-        apple_status = False
+        self.apple_status = False
+
         gpu_status = False
         tpu_status = False
+
+        self.JAX_AVAILABLE = JAX_AVAILABLE
+        self.MLX_AVAILABLE = MLX_AVAILABLE
 
         # 1. apple device check
         if MLX_AVAILABLE:
             try:
                 apple_device = mx.default_device()
                 if apple_device.type == mx.DeviceType.gpu:
-                    apple_status = True
+                    self.apple_status = True
             except Exception:
                 pass
         
@@ -85,10 +89,10 @@ class Backend:
             except Exception:
                 pass
 
-        if apple_status:
+        if self.apple_status:
             self.be = mx
             self._name = 'mlx'
-        elif (tpu_status or gpu_status) and not apple_status:
+        elif (tpu_status or gpu_status) and not self.apple_status:
             self.be = jnp
             self._name = 'jax'
         else:
