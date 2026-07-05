@@ -95,6 +95,9 @@ class Backend:
         elif (tpu_status or gpu_status) and not self.apple_status:
             self.be = jnp
             self._name = 'jax'
+        elif self.JAX_AVAILABLE:
+            self.be = jnp
+            self._name = 'jax'
         else:
             self.be = np
             self._name = 'numpy'
