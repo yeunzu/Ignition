@@ -1,10 +1,9 @@
-# 🔥 NovaGrad
+# NovaGrad
 
 [![PyPI version](https://badge.fury.io/py/novagrad.svg)](https://badge.fury.io/py/novagrad)
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **"인공지능의 혁신을 일으켜 전 지구적인 문제를 해결하는 점화 플러그"**
 
 \
 \
@@ -12,13 +11,22 @@
 
 
 
-## 🚀 왜 NovaGrad인가요?
+## NovaGrad의 탄생 과정
 
-1. **Hardware Agnostic:** 단 한 줄의 코드 수정 없이, 로컬 Mac(MLX)의 통합 메모리 이점과 클라우드(JAX)의 분산 처리 이점을 모두 누리세요.
-2. **Pure & Transparent:** 밑바닥부터 직접 구현한 객체지향적 구조로, 블랙박스 없이 신경망의 모든 흐름을 통제하고 확장할 수 있습니다.
-3. **Extensible:** `BaseLayer`, `BaseOptimizer`를 상속받아 나만의 최신 AI 논문 아이디어를 가장 빠르게 테스트하세요.
+1. 혼자 딥러닝 공부를 하며, 직접 라이브러리를 만들고 그걸 통제하는게 기존 라이브러리를 쓰는 것보다 더 편할 거 같아서 만들었습니다.
+2. 공부는 어떻게?
+    - 책과 인터넷을 통해 공부를 하고, 파이썬으로 실습코드 개조하면서 공부 중입니다.
+    - 현재 군대에 있느라, 짬내서 조금씩 공부해나가고 있어요.
+3. 이 라이브러리는 실전을 위하기보단, 스스로 공부와 연구를 하기 위해 만든 도구입니다.
+    - 기존 프레임워크의 틀에 갇혀있지 않고 자유롭게 코드를 만질 수 있어요.
+    - 그만큼 무언가 실험하기 용이합니다.
+4. 하드웨어 가속은 어떻게?
+    - JAX, MLX를 사용합니다.
+    - JAX로 구글의 TPU나 일반 GPU에서의 가속을, MLX로 맥에서의 가속을 지원할 수 있게 만들고 있어요.
+    - TPU는 가성비가 있다고 생각해서 쓰고 있습니다.
+    - MLX로 맥에서 가속하는 이유는 단순히 제가 맥을 갖고 있는데 이걸 가만히 두긴 아깝다고 생각했어요.
 
-## 📦 설치 방법
+## 설치 방법
 
 ```bash
 pip install novagrad
@@ -32,8 +40,8 @@ pip install git+https://github.com/yeunzu/NovaGrad.git
 ### 주의사항
 현재 초기 개발도 끝나지 않은 상태입니다. 따라서 수없이 말도 안되는 버그들이 많다는 점 이해해주시면 좋겠습니다
 
-## ⚡ 퀵 스타트 (Quick Start)
-가장 간단한 다층 퍼셉트론(MLP)으로 MNIST 데이터를 학습하는 예제입니다.
+## 퀵 스타트 (Quick Start)
+가장 간단한 다층 퍼셉트론(MLP)으로 MNIST 데이터를 학습하는 예제입니다. 모델이 이런 식으로 구성되게 만들었다 정도의 코드입니다.
 ```python
 import novagrad
 from novagrad.models import MyModel
@@ -54,14 +62,14 @@ model.add_layer(Softmax(backend=be))
 model.set_loss_func(CrossEntropyError(backend=be))
 
 # 3. 학습 시작!
-# trainer.fit() 등을 이용해 초고속 학습을 경험하세요.
+# trainer.fit() 등을 이용해 학습을 경험하세요.
 ```
 
-## 📖 공식 문서 (Documentation)
-레이어별 상세 파라미터, 데이터 증강(Albumentations) 사용법, 그리고 커스텀 모델 구축 가이드는 아래 공식 Notion 페이지에서 확인하실 수 있습니다.
+## 공식 문서 (Documentation)
+레이어별 상세 파라미터, 데이터 증강(Albumentations) 사용법, 그리고 커스텀 모델 구축 가이드는 아래 공식 Notion 페이지에서 확인하실 수 있습니다. 아직은 코드도 완전히 완성되지 않아서, 아무 내용이 없습니다! 빠른 시일 내에 뭐라도 적어놓을게요.
 
-👉 [NovaGrad 공식 사용 설명서 (Notion 링크)](https://app.notion.com/p/Home-NovaGrad-Documentation-3944bb67167a80bf845af6676ad69893?source=copy_link)
+-> [NovaGrad 공식 사용 설명서 (Notion 링크)](https://app.notion.com/p/Home-NovaGrad-Documentation-3944bb67167a80bf845af6676ad69893?source=copy_link)
 
-## 🤝 기여하기 (Contributing)
-NovaGrad는 전 지구적 문제를 해결하기 위한 오픈소스 프로젝트입니다. 버그 리포트, 기능 제안, Pull Request를 언제나 환영합니다!
+## 기여하기
+버그 리포트, 기능 제안, Pull Request를 언제나 환영합니다!
 
