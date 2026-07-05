@@ -23,6 +23,10 @@
 ```bash
 pip install novagrad
 ```
+또는
+```bash
+pip install git+https://github.com/yeunzu/NovaGrad.git
+```
 
 ## ⚡ 퀵 스타트 (Quick Start)
 가장 간단한 다층 퍼셉트론(MLP)으로 MNIST 데이터를 학습하는 예제입니다.
