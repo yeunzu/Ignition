@@ -23,8 +23,7 @@ class Affine(BaseLayer):
         ]
 
         # He, Xavier 등 구체적인 초기화는 파라미터가 필요한 자식 클래스가 직접 수행
-        init_fn = initializer() # 초기화 클래스 인스턴스화
-        W = init_fn(input_size, output_size, backend)
+        W = initializer(input_size, output_size, backend)
         B = self.backend.zeros(output_size)
         
         self.params = [W, B]

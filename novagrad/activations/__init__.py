@@ -1,6 +1,7 @@
 from .base_activation import BaseActivation
 
 from .sigmoid import Sigmoid
+from .softmax import Softmax
 from .tanh import Tanh
 from .relu import Relu
 from .leaky_relu import LeakyRelu
